@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>버추얼 대학교</title>
+<title>컴퓨터공학과 201502036 박유정</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -10,7 +10,25 @@
 	
 	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
-	
+		
+	<script type="text/javascript">
+	 $(document).ready(function(){
+		 $("#pic_univ").data("flag","false");
+		 $("#pic_univ").click(function(){
+			 var bflag=$("#pic_univ").data("flag");
+			 if(bflag=="false") {
+				 bflag="true";
+				 $("#pic_univ").removeClass("small");
+				 $("#pic_univ").addcClass("large");
+			 } else {
+				 bflag="false";
+				 $("#pic_univ").removeClass("large");
+				 $("#pic_univ").addcClass("small");
+			 };
+			 $("#pic_univ").data("flag",bflag);
+	 	}); 
+	 });
+	</script>
 	<style type="text/css">
 		#logo {
 						width:176px;
@@ -30,6 +48,26 @@
 		.fotorama__caption {
 				text-align:center;
 		}
+		#pic_univ {
+			float:left;
+			   margin-right:10px;
+			   margin-bottom:10px;
+			   -webkit-transition-property:width;
+			   -webkit-transition-duration:.3s;
+		}
+		.small { 
+			width:30%;
+		}
+		.large {
+			width:100%;
+		}
+		.clear_both {
+			clear:both;
+		}
+		.bold_style {
+			font-weight:bold;
+			color:#950000;
+		}
 	</style>
 </head>
 <body>
@@ -43,20 +81,39 @@
 					<img src="images/pic_i.png" alt="" class="ui-li-thumb" />
 					<h3 class="title_style">캠퍼스 이미지</h3>
 				</a></li>
-				<li><a href="#">
+				<li><a href="#intro">
 					<img src="images/intro_i.png" alt="" class="ui-li-thumb" />
 					<h3 class="title_style">대학교소개</h3>
 				</a></li>
-				<li><a href="#">
+				<li><a href="video.html" rel="external">
 					<img src="images/movie_i.png" alt="" class="ui-li-thumb" />
 					<h3 class="title_style">홍보동영상</h3>
 				</a></li>
-				<li><a href="#">
+				<li><a href="#map">
 					<img src="images/map_i.png" alt="" class="ui-li-thumb" />
 					<h3 class="title_style">캠퍼스 맵</h3>
 				</a></li>
 			</ul>
 		</div>
+	</div>
+	<div data-role="page" id="intro">
+		<div data-role="header" data-theme="b">
+			<a href="#main" data-icon="home" data-direction="reverse" class="ui-btn-left">Home</a>
+				<h1>대학교 소개</h1>
+		</div>
+		<div data-role="content" data-theme="c">
+			<img class="small" id="pic_univ" src="images/univ.jpg" alt="">
+			<h2>"<strong class="bold_style">시대정신</strong>선도하는 열린 <strong class="bold_style">학문 공동체</strong> 입니다."</h2>
+		</div>
+		<div class="clear_both"></div>
+		<p>경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교
+		경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교
+		경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교
+		경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교
+		경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교
+		경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교</p>
+		<p>경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교경운대학교</p>
+		<p>경운대학교경운대학교경운대학교경운대학교</p>
 	</div>
 	<div data-role="page" id="campus_images" class="gallery-page">
 		<div data-role="header">
